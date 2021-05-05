@@ -1,0 +1,190 @@
+******************************** WIDOK GŁÓWNY ********************************
+============ MainActivity ============
+Jest to okno logowania. 
+Użytkownik podaje adres e-mail oraz hasło.
+Pola nie mogą być puste.
+Jeśli podane dane nie występują w bazie, wyświetlany jest na dole ekranu komunikat.
+
+Każdy użytkownik po rejestracji jest normalnym użytkownikiem, dopiero administrator przypisuje rolę przeowdnika!
+1. W zależności od roli, klikając przycisk ZALOGUJ przechodzi do widoku "Uzytkownik_MAIN" lub "Przewodnik_MAIN".
+2. Założyłem że konto administratora jest tylko jedno, aby się zalogować, email: admin@admin.com | hasło: adminadmin 
+3. Klikając tekst "Nie masz konta? Zarejestruj się!" przechodzi do widoku "Rejestracja".
+4. Klikając tekst "Zapomniałeś hasła? Kliknij tutaj!" przechodzi do widoku "PrzypomnienieHasla".
+
+Za wygląd tego widoku odpowiada plik "activity_main.xml".
+
+============ Rejestracja ============
+W tym widoku użyktkownik rejestruje się, podając swoje dane.
+Pola nie mogą być puste.
+1. Klikając ZAREJESTRUJ, podane dane wprowadzane są do bazy.
+2. Klikając tekst "Jesteś zarejestrowany? Zaloguj się!" wraca do widoku "MainActivity".
+
+Użytkownik rejestruje się zawsze z rolą użytkownika!
+
+Za wygląd tego widoku odpowiada plik "activity_rejestracja.xml"
+
+============ PrzypomnienieHasla ============
+W tym miejscu należy podać adres email, zostanie wysłany link do zmiany hasła.
+
+Za wygląd tego widoku odpowiada plik "activity_przypomnienie_hasla.xml"
+******************************** WIDOK GŁÓWNY ********************************
+
+
+
+******************************** UŻYTKOWNIK ********************************
+Nie wszystkie warunki zostały spełnione =( 
+Jest możliwość anulowania wycieczki, ale nie ma wymagania czasowego.
+Po zrezygnowaniu z wycieczki kasa nie jest zwracana.
+
+============ Uzytkownik_MAIN ============
+1. Przycisk WYCIECZKI przechodzi do widoku "Uzytkownik_ListaWycieczek"
+2. Przycisk MOJE WYCIECZKI przechodzi do widoku "Uzytkownik_MojeWycieczki"
+3. Przycisk MOJE KONTO przechodzi do widoku "Uzytkownik_Konto"
+4. Przycisk WYLOGUJ - wiadomka
+
+Za wygląd tego widoku odpowiada plik "activity_uzytkownik_main.xml"
+
+============ Uzytkownik_ListaWycieczek ============
+W tym widoku wyświetlana jest lista dostępnych wycieczek.
+Wyświetlone jest docelowe miejsce, cena i data wycieczki.
+Klikając na wybraną wycieczkę załączy się widok "Uzytkownik_PrzegladWycieczki".
+
+Za wygląd tego widoku odpowiada plik "activity_uzytkownik_lista_wycieczek" oraz "wycieczka_element.xml".
+
+============ Uzytkownik_PrzegladWycieczki ============
+Ten widok przedstawia pełną ofertę wycieczki.
+Na dole jest przycisk ZAREZERWUJ WYCIECZKĘ. 
+Klikając pojawia się okno z potwierdzeniem czy na pewno chce zarezerwować.
+Jeśli jest niewystarczająca ilość środków na koncie, wyświetlony jest komuniakt.
+Chciałem zrobić sprawdzanie czy obecna wycieczka jest już zarezerwowana,
+ale wywalało błąd i nie wiedziałem jak naprawić, zrezygnowałem z tego.
+
+Za wygląd tego widoku odpowiada plik "activity_uzytkownik_przeglad_wycieczki.xml" oraz "wycieczka_rezerwacja.xml".
+
+============ Uzytkownik_MojeWycieczki ============
+W tym widoku wyświetlana jest lista wykupionych wycieczek.
+Wyświetlane jest docelowe miejsce, cena i data wycieczki.
+Klikając na wybraną wykupioną wycieczkę załączy się widok "Uzytkownik_PrzegladMojejWycieczki"
+
+Za wygląd tego widoku odpowiada plik "activity_uzytkownik_moje_wycieczki.xml" oraz "wycieczka_element.xml"
+
+============ Uzytkownik_PrzegladMojejWycieczki ============
+Ten widok przedstawia pełną ofertę wycieczki.
+Na dole jest przycisk ANULUJ REZERWACJĘ. 
+Klikając zostanie usunięta wycieczka z wykupionych wycieczek.
+
+Za wygląd tego widoku odpowiada plik "activity_uzytkownik_przeglad_mojej_wycieczki.xml".
+
+============ Uzytkownik_Konto ============
+Ten widok przedstawia stan konta, historię oraz możliwość wpłaty dowolnej kwoty na konto.
+
+Za wygląd tego widoku odpowiada plik "activity_uzytkownik_konto.xml" oraz "historia_element.xml".
+******************************** UŻYTKOWNIK ********************************
+
+
+
+******************************** PRZEWODNIK ********************************
+Nie ma jednego z założeń - historii odbytych wycieczek =(
+
+============ Przewodnik_MAIN ============
+Wyświetlane są wszystkie wycieczki, a te dla których jest przewodnikiem są wyróżnione na zielono.
+Klikajac na daną wycieczkę przechodzi do widoku "Przewodnik_ListaUczestnikow"
+Na dole przycisk WYLOGUJ - wiadomo.
+
+Za wygląd tego widoku odpowiada plik "activity_przewodnik_main.xml" oraz "wycieczka_element.xml"
+
+============ Przewodnik_ListaUczestnikow ============
+W tym widoku wyświetlana jest lista z uczestnikami wycieczki.
+
+Za wygląd tego widoku odpowiada plik "activity_przewodnik_lista_uczestnikow.xml".
+******************************** PRZEWODNIK ********************************
+
+
+
+******************************** ADMINISTRATOR ********************************
+Wszystkie wymagania chyba zostały spełnione.
+Zamiast widoków tabeli jest lista.
+Jedynie wymuszenie zmiany hasła nie jest dopracowane, bo wysyła się link na pocztę do zmiany, 
+ale jak użytkownik tego nie zrobi to się nic nie stanie.
+
+============ Admin_MAIN ============
+1. Górny widok to obecna data i godzina. nie służy to niczemu, taki "bajer xD".
+2. Przycisk DODAJ WYCIECZKĘ przechodzi do widoku "Admin_DodawanieWycieczek"
+3. Przycisk WYCIECZKI przechodzi do widoku "Admin_ListaWycieczek"
+4. Przycisk UŻYTKOWNICY przechodzi do widoku "Admin_ListaUzytkownikow"
+5. Przycisk WYLOGUJ - wiadomo :D 
+
+Za wygląd tego widoku odpowiada plik "activity_admin_main.xml".
+
+============ Admin_DodawanieWycieczek ============
+W tym miejscu dodajemy wycieczkę, pola nie mogą zostać puste.
+Przyciskiem DODAJ ZDJĘCIE dodamy do bazy TYLKO JEDNO zdjęcie z pamięci telefonu. 
+Klikając zatwierdź wszystkie informacje oraz zdjęcie dodawane są do bazy.
+
+Za wygląd tego widoku odpowiada plik "acitivity_admin_dodawanie_wycieczek.xml".
+
+============ Admin_ListaWycieczek ============
+W tym widoku wyświetlana jest lista dostępnych wycieczek.
+Wyświetlone jest docelowe miejsce, cena i data wycieczki.
+Klikając na wybraną wycieczkę załączy się widok "Admin_PrzegladWycieczki".
+
+Za wygląd tego widoku odpowiada plik "activity_main_lista_wycieczek.xml" oraz "wycieczka_element.xml".
+
+============ Admin_PrzegladWycieczki ============
+Ten widok przedstawia pełną ofertę wycieczki.
+Na dole są dwa przyciski:
+	- EDYTUJ WYCIECZKĘ - edytować można cenę, datę oraz przewodnika. 
+	                     Za widok tego okna dialogowego odpowiada plik "wycieczka_edycja.xml".
+	- USUŃ WYCIECZKĘ - usunięcie całkowite wycieczki. 
+					   Za widok tego okna dialogowego odpowiada plik "wycieczka_usuniecie.xml"
+					   
+Za wygląd tego widoku odpowiada plik "activity_admin_przeglad_wycieczki.xml".
+
+============ Admin_ListaUzytkownikow ============
+Ten widok wyświetla listę zarejestrowanych użytkowników.
+Użytkownik będący przewodnikiem świeci się na zielono.
+Klikając na użytkownika pojawia się okno dialogowe, w którym można:
+	- zrobić z użytkownika przewodnika
+	- zablokować konto
+	- wysłać linka do zmiany hasła (ale jak użytkownik tego nie zrobi to nic się nie stanie).
+	
+Za wygląd tego widoku odpowiada plik "activity_admin_lista_uzytkownikow.xml" oraz "uzytkownik_edycja.xml".
+******************************** ADMINISTRATOR ********************************
+
+Są trzy dodatkowe klasy: UzytkownikInfo, WycieczkaInfo i HistoriaKontaInfo, które dpowiadają za pobieranie danych do list.
+
+Pliki które należy wrzucić na gita:
+- HistoriaKontaInfo
+- Przewodnik_ListaUczestnikow
+- Przewodnik_MAIN
+- Uzytkownik_Konto
+- Uzytkownik_ListaWycieczek
+- Uzytkownik_MAIN
+- Uzytkownik_MojeWycieczki
+- Uzytkownik_PrzegladMojejWycieczki
+- Uzytkownik_PrzegladWycieczki
+- activity_przewodnik_lista_uczestnikow
+- activity_przewodnik_main
+- activity_uzytkownik_konto
+- activity_uzytkownik_lista_wycieczek
+- activity_uzytkownik_main
+- activity_uzytkownik_moje_wycieczki
+- activity_uzytkownik_przeglad_mojej_wycieczki
+- activity_uzytkownik_przeglad_wycieczki
+- historia_element
+- wycieczka_rezerwacja
+
+Pliki które należy zaktualizować:
+- AndroidManifest.xml
+- strings.xml
+- w pliku README możnaby rozpisać kto za co odpowiadał
+
+No i trzeba popracować jeszcze nad wyglądem graficznym =)
+
+
+
+
+
+
+
+	
